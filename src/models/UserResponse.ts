@@ -41,7 +41,4 @@ const UserResponse = sequelize.define<UserResponseModel>('UserResponse', {
   timestamps: false,
 });
 
-// Define associations
-
-
 export default UserResponse;

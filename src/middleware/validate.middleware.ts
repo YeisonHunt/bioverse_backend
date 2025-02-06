@@ -1,5 +1,6 @@
 import { Request, Response, NextFunction } from 'express';
 import { validationResult, ValidationChain } from 'express-validator';
+import { body } from 'express-validator';
 
 export const validate = (validations: ValidationChain[]) => {
   return async (req: Request, res: Response, next: NextFunction) => {
@@ -13,9 +14,6 @@ export const validate = (validations: ValidationChain[]) => {
     res.status(400).json({ errors: errors.array() });
   };
 };
-
-// Example validation schemas
-import { body } from 'express-validator';
 
 export const loginValidation = [
   body('username').trim().notEmpty().withMessage('Username is required'),

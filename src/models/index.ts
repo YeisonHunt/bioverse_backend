@@ -5,19 +5,19 @@ import QuestionnaireQuestion from './QuestionnaireQuestion';
 import User from './User';
 import UserResponse from './UserResponse';
 
-// Initialize associations with explicit aliases
+
 Questionnaire.belongsToMany(Question, {
   through: QuestionnaireQuestion,
   foreignKey: 'questionnaire_id',
   otherKey: 'question_id',
-  as: 'questions'  // This is the alias we'll use
+  as: 'questions' 
 });
 
 Question.belongsToMany(Questionnaire, {
   through: QuestionnaireQuestion,
   foreignKey: 'question_id',
   otherKey: 'questionnaire_id',
-  as: 'questionnaires'  // This is the alias we'll use
+  as: 'questionnaires'  
 });
 
 QuestionnaireQuestion.belongsTo(Question, {

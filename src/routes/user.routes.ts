@@ -4,8 +4,8 @@ import { authenticate, isAdmin } from '../middleware/auth.middleware';
 
 const router = Router();
 
-router.use(authenticate); // Apply authentication to all user routes
-router.use(isAdmin); // Apply admin check to all user routes
+router.use(authenticate); 
+router.use(isAdmin); 
 
 router.get('/', getAllUsers);
 router.get('/:userId/responses', getUserResponses);
